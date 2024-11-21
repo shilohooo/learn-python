@@ -1,7 +1,7 @@
 # python 中的类
 
 # 创建和使用类：类名命名规范使用大驼峰命名法
-# class Cat(object): - python2 创建类的语法
+# class-fundamental Cat(object): - python2 创建类的语法
 class Cat:
     def __init__(self, name, color):
         """
@@ -34,7 +34,19 @@ class Cat:
         print('cat: ' + self.name + ', color: ' + self.color + ', now run~')
 
     def print_age(self):
+        """
+        打印猫咪的年龄
+        :return:
+        """
         print('cat\'s age is ' + str(self.age))
+
+    def set_age(self, age):
+        """
+        设置猫咪的年龄
+        :param age: 年龄
+        :return:
+        """
+        self.age = age
 
 
 # 类实例化：类名(args?)
@@ -49,4 +61,8 @@ my_cat.print_age()
 # 修改属性的值
 # 第一种方式：直接通过实例变量.属性名称修改，这是最简单的方式
 my_cat.age = 4
+my_cat.print_age()
+
+# 通过方法修改属性值
+my_cat.set_age(2)
 my_cat.print_age()
