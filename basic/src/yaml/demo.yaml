@@ -1,0 +1,10 @@
+# 用户信息
+user:
+  # 姓名
+  name: admin
+  # 密码
+  password: admin123
+  # 角色
+  role: admin,user
+  # 年龄
+  age: 26
