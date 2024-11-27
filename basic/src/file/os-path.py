@@ -4,7 +4,6 @@ python 文件路径操作 - os.path
 
 # shutil 模块提供了复制文件、目录的函数
 import os
-import shutil
 
 TEST_FILE_PATH = "./test.txt"
 
@@ -42,8 +41,8 @@ print(os.getcwd())
 print(os.path.abspath(".."))
 
 # 获取相对路径：指定A路径、获取它相对于B路径的相对路径
-TEST_DIR_PATH = "C:\\Users"
-print(os.path.relpath(TEST_DIR_PATH, "C:\\"))
+TEST_DIR_PATH = "D:\\shiloh"
+print(os.path.relpath(TEST_DIR_PATH, "D:\\"))
 
 # 文件/路径检查 - 检查文件/路径是否存在
 print(os.path.exists("."))
@@ -75,8 +74,28 @@ for filename in os.listdir(TEST_DIR_PATH):
 print(f"{total_size=}")
 
 # 复制文件和目录
-shutil.copy(TEST_FILE_PATH, TEST_DIR_PATH)
+# shutil.copy(TEST_FILE_PATH, TEST_DIR_PATH)
 # 复制整个目录以及该目录下的所有文件
-shutil.copytree("./test", os.path.join(TEST_DIR_PATH, "test"))
+# shutil.copytree("./test", os.path.join(TEST_DIR_PATH, "test"))
 
-# https://www.pythoncheatsheet.org/cheatsheet/file-directory-path#moving-and-renaming
+# 移动文件与重命名文件
+# 移动文件，如果文件已存在，将会报错
+# shutil.move(TEST_FILE_PATH, TEST_DIR_PATH)
+# 移动加重命名文件
+# shutil.move(TEST_FILE_PATH, os.path.join(TEST_DIR_PATH, "test-move.txt"))
+
+# 删除文件和目录
+# 删除文件
+# os.unlink(os.path.join(TEST_DIR_PATH, "test.txt"))
+# 删除目录，注意：要删除的目录下不能包含任何文件，否则会报错
+# os.rmdir(os.path.join(TEST_DIR_PATH, "test"))
+# 删除目录和该目录下面的所有文件
+# shutil.rmtree(os.path.join(TEST_DIR_PATH, "test"))
+
+# 遍历目录树
+for folder_name, sub_folders, filenames in os.walk("D:\\projects"):
+    print(f"The current folder is {folder_name}")
+    for sub_folder in sub_folders:
+        print(f"sub folder of {folder_name}: {sub_folder}")
+        for filename in filenames:
+            print(f"file inside {folder_name}: filename:{filename}")

@@ -7,7 +7,7 @@ from pathlib2 import Path
 
 TEST_FILE_PATH = "./test.txt"
 
-TEST_DIR_PATH = "C:\\Users\\shiloh"
+TEST_DIR_PATH = "D:\\shiloh"
 
 #  路径拼接，python 会自动处理不同平台上的文件路径分隔符
 print(Path("usr") / "bin" / "spam")
@@ -44,7 +44,7 @@ print(Path.cwd())
 print(Path("..").resolve())
 
 # 获取相对路径：指定A路径、获取它相对于B路径的相对路径
-print(Path(TEST_DIR_PATH).relative_to("C:\\"))
+print(Path(TEST_DIR_PATH).relative_to("D:\\"))
 
 # 文件/路径检查 - 检查文件/路径是否存在
 print(Path(".").exists())
@@ -75,3 +75,9 @@ for sub_path in Path(TEST_DIR_PATH).iterdir():
     total_size += sub_path.stat().st_size
 
 print(f"{total_size=}")
+
+# 删除文件和目录
+# 删除文件
+# Path(TEST_DIR_PATH, "test.txt").unlink()
+# 删除目录，注意：要删除的目录下不能包含任何文件，否则会报错
+# Path(TEST_DIR_PATH, "test").rmdir()
