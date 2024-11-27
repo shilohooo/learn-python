@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:\shiloh\develop\program_files\code\python\learn-python\basic\src\debug\debug-demo.py", line 10, in <module>
+    raise Exception('抛出异常')
+Exception: 抛出异常
