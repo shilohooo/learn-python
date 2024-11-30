@@ -1,0 +1,22 @@
+[tool.poetry]
+# 项目名称
+name = "poetry-demo"
+# 版本
+version = "0.1.0"
+# 描述
+description = "依赖管理示例"
+# 作者
+authors = ["shiloh <lixiaolei595@gmail.com>"]
+# README 文件路径
+readme = "README.md"
+
+# 项目依赖声明
+# 添加依赖后，执行 poetry install 来安装
+# 如果要移除某个依赖，则执行 poetry remove 依赖名称
+[tool.poetry.dependencies]
+python = "^3.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
