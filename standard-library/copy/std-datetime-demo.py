@@ -6,6 +6,7 @@ python 标准库 - datetime：日期时间操作
 3.datetime
 """
 import datetime
+from datetime import timedelta
 
 # date：获取包含年、月、日属性的日期对象
 date_obj = datetime.date(2024, 12, 3)
@@ -86,4 +87,11 @@ diff = date2 - date1
 print(diff)
 # 相差多少天
 print(diff.days)
-# https://www.pythoncheatsheet.org/modules/datetime-module#timedelta
+
+# timedelta() 可以添加日期、秒、毫秒到一个 datetime 对象
+current_time = datetime.datetime.now()
+print(f"{current_time=}")
+print(current_time + timedelta(days=1, seconds=60))
+
+# 也可以减少日期、秒、毫秒
+print(current_time - timedelta(days=2))
