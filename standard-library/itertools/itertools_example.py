@@ -148,5 +148,3 @@ for color in colors_b:
 print("======================== zip_longest() ======================")
 for item in itertools.zip_longest(colors, numbers, fillvalue=None):
     print(item)
-
-# https://www.pythoncheatsheet.org/modules/json-module

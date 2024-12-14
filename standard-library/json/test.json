@@ -1,0 +1,13 @@
+{
+  "name": "Charles",
+  "age": 33,
+  "has_hair": false,
+  "hobbies": [
+    "photography",
+    "running"
+  ],
+  "appearance": {
+    "eyes": "brown",
+    "hair_color": null
+  }
+}
